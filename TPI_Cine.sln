@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPI_Cine_Backend", "TPI_Cine\TPI_Cine_Backend.csproj", "{3273B6D1-9320-436A-98AD-B3F8E6F873A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPI_Cine_Frontend", "TPI_Cine_Frontend\TPI_Cine_Frontend.csproj", "{6A1DCEB8-FCFD-4187-B8CD-191E6EE231B5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3273B6D1-9320-436A-98AD-B3F8E6F873A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3273B6D1-9320-436A-98AD-B3F8E6F873A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3273B6D1-9320-436A-98AD-B3F8E6F873A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3273B6D1-9320-436A-98AD-B3F8E6F873A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A1DCEB8-FCFD-4187-B8CD-191E6EE231B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A1DCEB8-FCFD-4187-B8CD-191E6EE231B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A1DCEB8-FCFD-4187-B8CD-191E6EE231B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A1DCEB8-FCFD-4187-B8CD-191E6EE231B5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {59E016DD-312A-4787-B0B7-C107D445CAC2}
+	EndGlobalSection
+EndGlobal
