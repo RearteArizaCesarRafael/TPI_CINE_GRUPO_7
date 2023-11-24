@@ -40,7 +40,6 @@
             groupBox1 = new GroupBox();
             btnAceptar = new Button();
             btnCancelar = new Button();
-            btnMenuPrincipal = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -58,7 +57,7 @@
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.Location = new Point(27, 82);
+            lblNombre.Location = new Point(27, 64);
             lblNombre.Name = "lblNombre";
             lblNombre.Size = new Size(51, 15);
             lblNombre.TabIndex = 2;
@@ -67,7 +66,7 @@
             // lblApellido
             // 
             lblApellido.AutoSize = true;
-            lblApellido.Location = new Point(27, 125);
+            lblApellido.Location = new Point(27, 113);
             lblApellido.Name = "lblApellido";
             lblApellido.Size = new Size(51, 15);
             lblApellido.TabIndex = 3;
@@ -76,7 +75,7 @@
             // lblTipoDocumento
             // 
             lblTipoDocumento.AutoSize = true;
-            lblTipoDocumento.Location = new Point(27, 180);
+            lblTipoDocumento.Location = new Point(27, 162);
             lblTipoDocumento.Name = "lblTipoDocumento";
             lblTipoDocumento.Size = new Size(96, 15);
             lblTipoDocumento.TabIndex = 4;
@@ -85,7 +84,7 @@
             // lblDni
             // 
             lblDni.AutoSize = true;
-            lblDni.Location = new Point(27, 229);
+            lblDni.Location = new Point(27, 211);
             lblDni.Name = "lblDni";
             lblDni.Size = new Size(27, 15);
             lblDni.TabIndex = 5;
@@ -93,21 +92,21 @@
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(134, 82);
+            txtNombre.Location = new Point(134, 64);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(134, 23);
             txtNombre.TabIndex = 6;
             // 
             // txtApellido
             // 
-            txtApellido.Location = new Point(134, 122);
+            txtApellido.Location = new Point(134, 112);
             txtApellido.Name = "txtApellido";
             txtApellido.Size = new Size(134, 23);
             txtApellido.TabIndex = 7;
             // 
             // txtDni
             // 
-            txtDni.Location = new Point(134, 226);
+            txtDni.Location = new Point(134, 208);
             txtDni.Name = "txtDni";
             txtDni.Size = new Size(134, 23);
             txtDni.TabIndex = 8;
@@ -115,7 +114,7 @@
             // cboTipoDocumento
             // 
             cboTipoDocumento.FormattingEnabled = true;
-            cboTipoDocumento.Location = new Point(134, 177);
+            cboTipoDocumento.Location = new Point(134, 160);
             cboTipoDocumento.Name = "cboTipoDocumento";
             cboTipoDocumento.Size = new Size(134, 23);
             cboTipoDocumento.TabIndex = 9;
@@ -135,14 +134,15 @@
             groupBox1.ForeColor = SystemColors.ControlText;
             groupBox1.Location = new Point(12, 12);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(424, 308);
+            groupBox1.Size = new Size(309, 253);
             groupBox1.TabIndex = 10;
             groupBox1.TabStop = false;
             groupBox1.Text = "Sucursal De Cine";
+            groupBox1.Enter += groupBox1_Enter;
             // 
             // btnAceptar
             // 
-            btnAceptar.Location = new Point(64, 336);
+            btnAceptar.Location = new Point(75, 271);
             btnAceptar.Name = "btnAceptar";
             btnAceptar.Size = new Size(75, 23);
             btnAceptar.TabIndex = 11;
@@ -152,35 +152,26 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(175, 336);
+            btnCancelar.Location = new Point(180, 271);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(75, 23);
             btnCancelar.TabIndex = 12;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // btnMenuPrincipal
-            // 
-            btnMenuPrincipal.Location = new Point(317, 336);
-            btnMenuPrincipal.Name = "btnMenuPrincipal";
-            btnMenuPrincipal.Size = new Size(106, 23);
-            btnMenuPrincipal.TabIndex = 13;
-            btnMenuPrincipal.Text = "Menu Principal";
-            btnMenuPrincipal.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // FrmAltaCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientActiveCaption;
-            ClientSize = new Size(460, 383);
-            Controls.Add(btnMenuPrincipal);
+            ClientSize = new Size(333, 298);
             Controls.Add(btnCancelar);
             Controls.Add(btnAceptar);
             Controls.Add(groupBox1);
             ForeColor = SystemColors.ControlText;
             Name = "FrmAltaCliente";
-            Text = "FrmAltaCliente";
+            Text = "Alta Cliente";
             Load += FrmAltaCliente_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
@@ -201,6 +192,5 @@
         private GroupBox groupBox1;
         private Button btnAceptar;
         private Button btnCancelar;
-        private Button btnMenuPrincipal;
     }
 }

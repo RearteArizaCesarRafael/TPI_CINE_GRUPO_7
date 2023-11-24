@@ -10,16 +10,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static TPI_Cine_Backend.Entidades.Cliente;
+using static TPI_Backend.Entidades.Cliente;
+using TPI_Backend.Entidades;
+using System.Diagnostics;
 
 namespace TPI_Cine_Frontend
 {
     public partial class FrmAltaCliente : Form
     {
+        Cliente client = new Cliente();
         public FrmAltaCliente()
         {
             InitializeComponent();
-            //newClient = new Cliente();
+
         }
 
         private void FrmAltaCliente_Load(object sender, EventArgs e)
@@ -30,23 +33,23 @@ namespace TPI_Cine_Frontend
 
         private async void LoadDocTypeAsync()
         {
-            string url = "";
+            string url = "https://localhost:7282/api/Cliente/tiposDocumentos";
             var result = await ClientSingleton.GetInstance().GetAsync(url);
-            var lst = JsonConvert.DeserializeObject<List<tipoDocumento>>(result);
+            var lst = JsonConvert.DeserializeObject<List<tipoDocumentoCliente>>(result);
             cboTipoDocumento.DataSource = lst;
-            cboTipoDocumento.DisplayMember = "id_tipo_documento";
-            cboTipoDocumento.ValueMember = "tipo_documento";
+            //cboTipoDocumento.DisplayMember = "id_tipo_documento";
+            //cboTipoDocumento.ValueMember = "tipo_documento";
             cboTipoDocumento.DropDownStyle = ComboBoxStyle.DropDownList;
         }
         private async Task InsertClientAsync()
         {
-            newClient.Nombre = txtNombre.Text;
-            newClient.Apellido = txtApellido.Text;
-            newClient.TipoDocumento = Convert.ToInt32(cboTipoDocumento.SelectedValue);
-            newClient.Documento = Convert.ToInt32(txtDni.Text);
-            string bodyContent = JsonConvert.SerializeObject(newClient);
+            client.Nombre = txtNombre.Text;
+            client.Apellido = txtApellido.Text;
+            client.TipoDocumento = (tipoDocumentoCliente)cboTipoDocumento.SelectedItem;
+            client.Documento = Convert.ToInt32(txtDni.Text);
+            string bodyContent = JsonConvert.SerializeObject(client);
 
-            string url = "";
+            string url = "https://localhost:7282/api/Cliente";
             var result = await ClientSingleton.GetInstance().PostAsync(url, bodyContent);
 
             if (result.Equals("true"))
@@ -62,14 +65,12 @@ namespace TPI_Cine_Frontend
 
 
 
-
-
         }
         private async void btnAceptar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtNombre.Text) || int.TryParse(txtNombre.Text, out _))
             {
-                MessageBox.Show("Debe ingresar el nombre correctamente","Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Debe ingresar el nombre correctamente", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtNombre.Clear();
                 return;
             }
@@ -81,16 +82,31 @@ namespace TPI_Cine_Frontend
             }
             if (cboTipoDocumento.SelectedIndex == -1)
             {
-                MessageBox.Show("Debe seleccionar un tipo de documento", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);                
+                MessageBox.Show("Debe seleccionar un tipo de documento", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-            if (!int.TryParse(txtDni.Text, out _) || txtDni.Text.Length>4)
+            if (!int.TryParse(txtDni.Text, out _) || txtDni.Text.Length < 4)
             {
                 MessageBox.Show("Debe ingresar el dni correctamente", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtDni.Clear();
                 return;
-            }          
+            }
+
             await InsertClientAsync();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            DialogResult = MessageBox.Show("Quiere salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (DialogResult == DialogResult.Yes)
+            {
+                this.Dispose();
+            }
         }
     }
 }

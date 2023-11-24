@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnMenuPrincipal = new Button();
             btnCancelar = new Button();
             btnAceptar = new Button();
             groupBox1 = new GroupBox();
+            cboFormato = new ComboBox();
+            label1 = new Label();
             lblTipoSala = new Label();
             txtTipoSala = new TextBox();
             cboSala = new ComboBox();
@@ -46,36 +47,31 @@
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
-            // btnMenuPrincipal
-            // 
-            btnMenuPrincipal.Location = new Point(304, 344);
-            btnMenuPrincipal.Name = "btnMenuPrincipal";
-            btnMenuPrincipal.Size = new Size(106, 23);
-            btnMenuPrincipal.TabIndex = 17;
-            btnMenuPrincipal.Text = "Menu Principal";
-            btnMenuPrincipal.UseVisualStyleBackColor = true;
-            // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(132, 344);
+            btnCancelar.Location = new Point(224, 348);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(75, 23);
             btnCancelar.TabIndex = 16;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // btnAceptar
             // 
-            btnAceptar.Location = new Point(18, 344);
+            btnAceptar.Location = new Point(93, 348);
             btnAceptar.Name = "btnAceptar";
             btnAceptar.Size = new Size(75, 23);
             btnAceptar.TabIndex = 15;
             btnAceptar.Text = "Aceptar";
             btnAceptar.UseVisualStyleBackColor = true;
+            btnAceptar.Click += btnAceptar_Click;
             // 
             // groupBox1
             // 
             groupBox1.BackColor = SystemColors.ActiveCaption;
+            groupBox1.Controls.Add(cboFormato);
+            groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(lblTipoSala);
             groupBox1.Controls.Add(txtTipoSala);
             groupBox1.Controls.Add(cboSala);
@@ -88,17 +84,35 @@
             groupBox1.Controls.Add(dtpFechaFuncion);
             groupBox1.Controls.Add(lblNroPresupuesto);
             groupBox1.ForeColor = SystemColors.ControlText;
-            groupBox1.Location = new Point(12, 12);
+            groupBox1.Location = new Point(12, 24);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(485, 308);
+            groupBox1.Size = new Size(378, 309);
             groupBox1.TabIndex = 14;
             groupBox1.TabStop = false;
             groupBox1.Text = "Sucursal De Cine";
+            groupBox1.Enter += groupBox1_Enter;
+            // 
+            // cboFormato
+            // 
+            cboFormato.FormattingEnabled = true;
+            cboFormato.Location = new Point(123, 264);
+            cboFormato.Name = "cboFormato";
+            cboFormato.Size = new Size(204, 23);
+            cboFormato.TabIndex = 13;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(44, 264);
+            label1.Name = "label1";
+            label1.Size = new Size(52, 15);
+            label1.TabIndex = 12;
+            label1.Text = "Formato";
             // 
             // lblTipoSala
             // 
             lblTipoSala.AutoSize = true;
-            lblTipoSala.Location = new Point(44, 237);
+            lblTipoSala.Location = new Point(45, 214);
             lblTipoSala.Name = "lblTipoSala";
             lblTipoSala.Size = new Size(54, 15);
             lblTipoSala.TabIndex = 11;
@@ -107,16 +121,15 @@
             // txtTipoSala
             // 
             txtTipoSala.Enabled = false;
-            txtTipoSala.Location = new Point(120, 237);
+            txtTipoSala.Location = new Point(121, 214);
             txtTipoSala.Name = "txtTipoSala";
             txtTipoSala.Size = new Size(206, 23);
             txtTipoSala.TabIndex = 10;
-            txtTipoSala.TextChanged += txtTipoSala_TextChanged;
             // 
             // cboSala
             // 
             cboSala.FormattingEnabled = true;
-            cboSala.Location = new Point(120, 200);
+            cboSala.Location = new Point(121, 177);
             cboSala.Name = "cboSala";
             cboSala.Size = new Size(206, 23);
             cboSala.TabIndex = 9;
@@ -125,7 +138,7 @@
             // lblSala
             // 
             lblSala.AutoSize = true;
-            lblSala.Location = new Point(44, 203);
+            lblSala.Location = new Point(45, 180);
             lblSala.Name = "lblSala";
             lblSala.Size = new Size(28, 15);
             lblSala.TabIndex = 8;
@@ -134,15 +147,16 @@
             // cboPelicula
             // 
             cboPelicula.FormattingEnabled = true;
-            cboPelicula.Location = new Point(120, 80);
+            cboPelicula.Location = new Point(121, 57);
             cboPelicula.Name = "cboPelicula";
             cboPelicula.Size = new Size(206, 23);
             cboPelicula.TabIndex = 7;
+            cboPelicula.SelectedIndexChanged += cboPelicula_SelectedIndexChanged;
             // 
             // lblPelicula
             // 
             lblPelicula.AutoSize = true;
-            lblPelicula.Location = new Point(43, 83);
+            lblPelicula.Location = new Point(44, 60);
             lblPelicula.Name = "lblPelicula";
             lblPelicula.Size = new Size(48, 15);
             lblPelicula.TabIndex = 6;
@@ -151,7 +165,7 @@
             // dtpHoraFuncion
             // 
             dtpHoraFuncion.Format = DateTimePickerFormat.Time;
-            dtpHoraFuncion.Location = new Point(120, 158);
+            dtpHoraFuncion.Location = new Point(121, 135);
             dtpHoraFuncion.Name = "dtpHoraFuncion";
             dtpHoraFuncion.Size = new Size(91, 23);
             dtpHoraFuncion.TabIndex = 5;
@@ -160,7 +174,7 @@
             // lblHorario
             // 
             lblHorario.AutoSize = true;
-            lblHorario.Location = new Point(43, 164);
+            lblHorario.Location = new Point(44, 141);
             lblHorario.Name = "lblHorario";
             lblHorario.Size = new Size(47, 15);
             lblHorario.TabIndex = 4;
@@ -169,7 +183,7 @@
             // lblFecha
             // 
             lblFecha.AutoSize = true;
-            lblFecha.Location = new Point(43, 125);
+            lblFecha.Location = new Point(44, 102);
             lblFecha.Name = "lblFecha";
             lblFecha.Size = new Size(38, 15);
             lblFecha.TabIndex = 3;
@@ -177,9 +191,10 @@
             // 
             // dtpFechaFuncion
             // 
-            dtpFechaFuncion.Location = new Point(120, 125);
+            dtpFechaFuncion.Format = DateTimePickerFormat.Short;
+            dtpFechaFuncion.Location = new Point(121, 102);
             dtpFechaFuncion.Name = "dtpFechaFuncion";
-            dtpFechaFuncion.Size = new Size(200, 23);
+            dtpFechaFuncion.Size = new Size(206, 23);
             dtpFechaFuncion.TabIndex = 2;
             // 
             // lblNroPresupuesto
@@ -198,13 +213,12 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientActiveCaption;
-            ClientSize = new Size(530, 393);
-            Controls.Add(btnMenuPrincipal);
+            ClientSize = new Size(403, 380);
             Controls.Add(btnCancelar);
             Controls.Add(btnAceptar);
             Controls.Add(groupBox1);
             Name = "FrmAltaFuncion";
-            Text = "FrmAltaFuncion";
+            Text = "Alta de Funciones";
             Load += FrmAltaFuncion_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
@@ -212,8 +226,6 @@
         }
 
         #endregion
-
-        private Button btnMenuPrincipal;
         private Button btnCancelar;
         private Button btnAceptar;
         private GroupBox groupBox1;
@@ -228,5 +240,7 @@
         private Label lblPelicula;
         private Label lblTipoSala;
         private TextBox txtTipoSala;
+        private ComboBox cboFormato;
+        private Label label1;
     }
 }

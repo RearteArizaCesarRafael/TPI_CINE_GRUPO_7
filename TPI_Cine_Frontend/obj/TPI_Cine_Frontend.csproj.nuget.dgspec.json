@@ -1,32 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ignacio\\source\\repos\\Prog II\\TPI_Cine\\TPI_Cine_Frontend\\TPI_Cine_Frontend.csproj": {}
+    "C:\\Users\\rafif\\Desktop\\TP_CINE\\Repo-FrontAndBack-Cine\\TPI_Cine_Frontend\\TPI_Cine_Frontend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ignacio\\source\\repos\\Prog II\\TPI_Cine\\TPI_Cine\\TPI_Cine_Backend.csproj": {
+    "C:\\Users\\rafif\\Desktop\\TP_CINE\\Repo-FrontAndBack-Cine\\TPI_Backend\\TPI_Backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ignacio\\source\\repos\\Prog II\\TPI_Cine\\TPI_Cine\\TPI_Cine_Backend.csproj",
-        "projectName": "TPI_Cine_Backend",
-        "projectPath": "C:\\Users\\Ignacio\\source\\repos\\Prog II\\TPI_Cine\\TPI_Cine\\TPI_Cine_Backend.csproj",
-        "packagesPath": "C:\\Users\\Ignacio\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ignacio\\source\\repos\\Prog II\\TPI_Cine\\TPI_Cine\\obj\\",
+        "projectUniqueName": "C:\\Users\\rafif\\Desktop\\TP_CINE\\Repo-FrontAndBack-Cine\\TPI_Backend\\TPI_Backend.csproj",
+        "projectName": "TPI_Backend",
+        "projectPath": "C:\\Users\\rafif\\Desktop\\TP_CINE\\Repo-FrontAndBack-Cine\\TPI_Backend\\TPI_Backend.csproj",
+        "packagesPath": "C:\\Users\\rafif\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rafif\\Desktop\\TP_CINE\\Repo-FrontAndBack-Cine\\TPI_Backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Ignacio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\rafif\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0-windows"
+          "net6.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0-windows7.0": {
-            "targetAlias": "net6.0-windows",
+          "net6.0": {
+            "targetAlias": "net6.0",
             "projectReferences": {}
           }
         },
@@ -37,8 +37,8 @@
         }
       },
       "frameworks": {
-        "net6.0-windows7.0": {
-          "targetAlias": "net6.0-windows",
+        "net6.0": {
+          "targetAlias": "net6.0",
           "dependencies": {
             "System.Data.SqlClient": {
               "target": "Package",
@@ -59,26 +59,23 @@
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
-            },
-            "Microsoft.WindowsDesktop.App.WindowsForms": {
-              "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Ignacio\\source\\repos\\Prog II\\TPI_Cine\\TPI_Cine_Frontend\\TPI_Cine_Frontend.csproj": {
+    "C:\\Users\\rafif\\Desktop\\TP_CINE\\Repo-FrontAndBack-Cine\\TPI_Cine_Frontend\\TPI_Cine_Frontend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ignacio\\source\\repos\\Prog II\\TPI_Cine\\TPI_Cine_Frontend\\TPI_Cine_Frontend.csproj",
+        "projectUniqueName": "C:\\Users\\rafif\\Desktop\\TP_CINE\\Repo-FrontAndBack-Cine\\TPI_Cine_Frontend\\TPI_Cine_Frontend.csproj",
         "projectName": "TPI_Cine_Frontend",
-        "projectPath": "C:\\Users\\Ignacio\\source\\repos\\Prog II\\TPI_Cine\\TPI_Cine_Frontend\\TPI_Cine_Frontend.csproj",
-        "packagesPath": "C:\\Users\\Ignacio\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ignacio\\source\\repos\\Prog II\\TPI_Cine\\TPI_Cine_Frontend\\obj\\",
+        "projectPath": "C:\\Users\\rafif\\Desktop\\TP_CINE\\Repo-FrontAndBack-Cine\\TPI_Cine_Frontend\\TPI_Cine_Frontend.csproj",
+        "packagesPath": "C:\\Users\\rafif\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rafif\\Desktop\\TP_CINE\\Repo-FrontAndBack-Cine\\TPI_Cine_Frontend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Ignacio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\rafif\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -92,8 +89,8 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\Users\\Ignacio\\source\\repos\\Prog II\\TPI_Cine\\TPI_Cine\\TPI_Cine_Backend.csproj": {
-                "projectPath": "C:\\Users\\Ignacio\\source\\repos\\Prog II\\TPI_Cine\\TPI_Cine\\TPI_Cine_Backend.csproj"
+              "C:\\Users\\rafif\\Desktop\\TP_CINE\\Repo-FrontAndBack-Cine\\TPI_Backend\\TPI_Backend.csproj": {
+                "projectPath": "C:\\Users\\rafif\\Desktop\\TP_CINE\\Repo-FrontAndBack-Cine\\TPI_Backend\\TPI_Backend.csproj"
               }
             }
           }
@@ -111,6 +108,10 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
+            },
+            "ReportViewerCore.WinForms": {
+              "target": "Package",
+              "version": "[15.1.10, )"
             }
           },
           "imports": [
@@ -132,7 +133,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     }

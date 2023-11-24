@@ -38,5 +38,60 @@ namespace TPI_Cine_Frontend.HTTP
                 response = await result.Content.ReadAsStringAsync();
             return response;
         }
+
+        public async Task<string> DeleteAsyncV1(string url, int id)
+        {
+            string stringId = id.ToString();
+            string stringError = "ERROR AL BORRAR";
+
+            var result = await client.DeleteAsync(url);
+            if (result.IsSuccessStatusCode)
+            {
+                return result.StatusCode.ToString();
+            }
+            else
+            {
+                return stringError;
+            }
+        }
+
+        public async Task<string> PutAsync(string url, string data)
+        { 
+            StringContent content = new StringContent(data, Encoding.UTF8, "application/json");
+            var result = await client.PutAsync(url, content);
+            var response = "";
+            if (result.IsSuccessStatusCode)
+                response = await result.Content.ReadAsStringAsync();
+            return response;
+        }
+
+        public async Task<string> DeleteAsync(string url)
+        {
+            //    try
+            //    {
+            //        HttpResponseMessage response = await client.DeleteAsync($"{url}?id={id}");
+
+            //        if (response.IsSuccessStatusCode)
+            //        {
+            //            return "Se elimino correctamente";
+            //        }
+            //        else
+            //        {
+            //            return "No se pudo eliminar";
+            //        }
+            //    }
+            //    catch (HttpRequestException ex)
+            //    {
+            //        // Handle exception (e.g., log, throw)
+            //        return $"Error: {ex.Message}";
+            //    }
+            //}
+
+            var result = await client.DeleteAsync(url);
+            var response = "";
+            if (result.IsSuccessStatusCode)
+                response = await result.Content.ReadAsStringAsync();
+            return response;
+        }
     }
 }
